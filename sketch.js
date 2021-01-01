@@ -26,10 +26,10 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(640, 520);
+  createCanvas(320, 260);
   // Create the video
   video = createCapture(VIDEO);
-  video.size(640, 520);
+  video.size(320, 260);
   video.hide();
 
   flippedVideo = ml5.flipImage(video)
@@ -45,7 +45,7 @@ function draw() {
 
   // Draw the label
   fill('red');
-  textSize(70);
+  textSize(30);
   textAlign(CENTER);
   text(label, width / 2, height - 4);
 }
@@ -67,7 +67,7 @@ function gotResult(error, results) {
   // console.log(results[0]);
   label = results[0].label;
   // Classifiy again!
-  //classifyVideo();
+  classifyVideo();
 }
 
 function whoFunction() {
